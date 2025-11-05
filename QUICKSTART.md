@@ -5,6 +5,7 @@
 Your complete Next.js project structure is ready with:
 
 ### 📁 Directory Structure
+
 ```
 frontend/
 ├── app/
@@ -52,16 +53,19 @@ The website is currently showing with placeholder gray boxes where images should
 ## 🎨 Design System Implemented
 
 ### Colors (from Figma)
+
 - **Primary Green**: `#0A3A2A` (used in header, footer, buttons)
 - **Cream Background**: `#F5F3ED` (alternating sections)
 - **Gold Accent**: `#D4AF37` (for highlights)
 - **Sage Gray**: `#8B9A92` (for text)
 
 ### Typography
+
 - **Headings**: Playfair Display (elegant serif)
 - **Body Text**: Inter (clean sans-serif)
 
 ### Components Match Your Figma Design:
+
 ✅ Scrolling promotional banner at top
 ✅ Navigation with logo, menu, phone, login
 ✅ Hero with "WELCOME TO LUXORT" and two CTA buttons
@@ -78,9 +82,11 @@ The website is currently showing with placeholder gray boxes where images should
 ## 📝 Next Steps
 
 ### Step 1: Add Real Images (Next Task)
+
 Replace the gray placeholder boxes with your actual images from Figma:
 
 1. **Export images from Figma:**
+
    - Hero images (3 images)
    - About section images (2 images)
    - Hotel highlight images
@@ -88,6 +94,7 @@ Replace the gray placeholder boxes with your actual images from Figma:
    - Testimonial avatars (6 images)
 
 2. **Place images in:**
+
    ```
    frontend/public/assets/images/
    ```
@@ -97,6 +104,7 @@ Replace the gray placeholder boxes with your actual images from Figma:
    - With `<Image src="/assets/images/hero.jpg" alt="..." />`
 
 ### Step 2: Test Responsiveness
+
 ```bash
 # Open in browser: http://localhost:3000
 # Test on:
@@ -106,9 +114,11 @@ Replace the gray placeholder boxes with your actual images from Figma:
 ```
 
 ### Step 3: Deploy to Netlify
+
 See `DEPLOYMENT.md` for full guide.
 
 Quick deploy:
+
 ```bash
 # 1. Push to GitHub
 git init
@@ -142,6 +152,7 @@ Open http://localhost:3000 and check:
 ## 🐛 Common Issues & Fixes
 
 ### Issue: Port 3000 already in use
+
 ```bash
 # Kill the process and restart
 npx kill-port 3000
@@ -149,6 +160,7 @@ npm run dev
 ```
 
 ### Issue: Changes not showing
+
 ```bash
 # Clear cache and restart
 rm -rf .next
@@ -156,6 +168,7 @@ npm run dev
 ```
 
 ### Issue: Styling not working
+
 - Make sure Tailwind is processing: check `globals.css`
 - Restart dev server: `Ctrl+C` then `npm run dev`
 
@@ -180,6 +193,7 @@ npm run lint         # Check code quality
 ## 🎯 Your Current Status
 
 ✅ **COMPLETED:**
+
 1. Full project structure created
 2. All 9 components built
 3. Tailwind CSS configured
@@ -188,9 +202,11 @@ npm run lint         # Check code quality
 6. Deployment files ready
 
 🔄 **IN PROGRESS:**
+
 - Adding real images from Figma
 
 ⏳ **TODO:**
+
 - Fine-tune responsive design
 - Deploy to Netlify
 - Share with recruiters!
@@ -212,6 +228,7 @@ npm run lint         # Check code quality
 Your luxury hotel website is ready for images and deployment!
 
 **Questions?**
+
 - Check the README.md for detailed documentation
 - See DEPLOYMENT.md for deployment steps
 - Review component files for implementation details

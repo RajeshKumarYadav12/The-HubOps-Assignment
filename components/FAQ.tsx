@@ -26,37 +26,37 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-20 bg-cream">
-      <div className="container mx-auto px-4">
+    <section className="py-12 md:py-16 lg:py-20 bg-cream">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-sm text-sage uppercase tracking-widest mb-2">FAQ</p>
-          <h2 className="text-4xl md:text-5xl font-serif text-primary">
+        <div className="text-center mb-8 md:mb-12">
+          <p className="text-xs md:text-sm text-sage uppercase tracking-widest mb-2">FAQ</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-primary">
             Frequently Asked Questions
           </h2>
         </div>
 
         {/* FAQ List */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="bg-white rounded-lg overflow-hidden"
+              className="bg-white rounded-lg overflow-hidden shadow-sm"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-cream transition-colors"
+                className="w-full flex items-center justify-between p-4 md:p-6 text-left hover:bg-cream transition-colors"
               >
-                <span className="font-medium text-primary">{faq.question}</span>
+                <span className="font-medium text-primary text-sm md:text-base pr-4">{faq.question}</span>
                 <ChevronDown 
-                  className={`w-5 h-5 text-sage transition-transform ${
+                  className={`w-5 h-5 text-sage transition-transform flex-shrink-0 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6">
-                  <p className="text-sage">{faq.answer}</p>
+                <div className="px-4 md:px-6 pb-4 md:pb-6">
+                  <p className="text-sage text-sm md:text-base">{faq.answer}</p>
                 </div>
               )}
             </div>

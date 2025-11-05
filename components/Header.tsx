@@ -13,7 +13,7 @@ export default function Header() {
         <div className="container mx-auto px-4 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             {/* Left - Navigation Links */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
               <a href="#home" className="text-gray-700 hover:text-primary transition-colors uppercase text-xs tracking-widest font-medium">
                 Home
               </a>
@@ -32,12 +32,12 @@ export default function Header() {
                 alt="Luxort Logo" 
                 width="120" 
                 height="40"
-                className="object-contain h-10"
+                className="object-contain h-8 md:h-10 w-auto"
               />
             </div>
 
             {/* Right Side - Language, Phone, Login */}
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-3 xl:gap-6">
               <div className="flex items-center gap-2 text-gray-700 cursor-pointer hover:text-primary transition-colors">
                 <Globe className="w-4 h-4" />
                 <span className="text-xs font-medium">EN</span>
@@ -60,8 +60,9 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden text-gray-800"
+              className="lg:hidden text-gray-800 p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -69,25 +70,25 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <nav className="md:hidden mt-6 pb-4 flex flex-col gap-4 border-t border-gray-100 pt-4">
-              <a href="#home" className="text-gray-700 hover:text-primary transition-colors uppercase text-xs tracking-widest font-medium">
+            <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-4 border-t border-gray-100 pt-4">
+              <a href="#home" className="text-gray-700 hover:text-primary transition-colors uppercase text-sm tracking-widest font-medium">
                 Home
               </a>
-              <a href="#about" className="text-gray-700 hover:text-primary transition-colors uppercase text-xs tracking-widest font-medium">
+              <a href="#about" className="text-gray-700 hover:text-primary transition-colors uppercase text-sm tracking-widest font-medium">
                 About
               </a>
-              <a href="#events" className="text-gray-700 hover:text-primary transition-colors uppercase text-xs tracking-widest font-medium">
+              <a href="#events" className="text-gray-700 hover:text-primary transition-colors uppercase text-sm tracking-widest font-medium">
                 Events
               </a>
               <div className="flex items-center gap-2 text-gray-700 mt-2">
                 <Globe className="w-4 h-4" />
-                <span className="text-xs font-medium">EN</span>
+                <span className="text-sm font-medium">EN</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
                 <Phone className="w-4 h-4" />
-                <span className="text-xs">+123 7654 8970</span>
+                <span className="text-sm">+123 7654 8970</span>
               </div>
-              <button className="flex items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded hover:bg-primary-light transition-colors text-xs font-semibold uppercase tracking-widest w-full">
+              <button className="flex items-center justify-center gap-2 bg-primary text-white px-4 py-2.5 rounded hover:bg-opacity-90 transition-all text-sm font-semibold uppercase tracking-widest w-full">
                 Login
                 <ArrowUpRight className="w-4 h-4" />
               </button>

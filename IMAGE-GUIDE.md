@@ -7,6 +7,7 @@
 ## Step 1: Export Images from Figma
 
 ### A. Hero Section Images (3 images needed)
+
 1. Open your Figma design
 2. Select the green area image → Right-click → Export → PNG → 2x
 3. Name it: `hero-green.jpg`
@@ -14,31 +15,37 @@
 5. Select the luxury area image → Export → `hero-luxury.jpg`
 
 ### B. About Section Images (2 images needed)
+
 1. Export the first image → `about-1.jpg`
 2. Export the second image → `about-2.jpg`
 
 ### C. Hotel Highlights (1 main image)
+
 1. Export the swimming pool/highlight image → `highlight-pool.jpg`
 
 ### D. Events Section (3 images)
+
 1. Weddings image → `event-wedding.jpg`
 2. Corporate image → `event-corporate.jpg`
 3. Celebrations image → `event-celebration.jpg`
 
 ### E. Testimonials (6 avatar images)
+
 1. Export each avatar → `avatar-1.jpg` to `avatar-6.jpg`
-Or use placeholder avatars from UI Avatars
+   Or use placeholder avatars from UI Avatars
 
 ---
 
 ## Step 2: Place Images in Your Project
 
 Copy all exported images to:
+
 ```
 frontend/public/assets/images/
 ```
 
 Your structure should look like:
+
 ```
 frontend/public/assets/images/
 ├── hero-green.jpg
@@ -65,47 +72,52 @@ frontend/public/assets/images/
 ### Update Hero.tsx
 
 Find this line (around line 50-52):
+
 ```tsx
 <div className="col-span-1 bg-sage-light h-96 rounded-lg"></div>
 ```
 
 Replace with:
+
 ```tsx
-<Image 
-  src="/assets/images/hero-green.jpg" 
-  alt="Green area" 
-  width={400} 
+<Image
+  src="/assets/images/hero-green.jpg"
+  alt="Green area"
+  width={400}
   height={600}
   className="col-span-1 h-96 rounded-lg object-cover"
 />
 ```
 
 Add import at the top:
+
 ```tsx
-import Image from 'next/image';
+import Image from "next/image";
 ```
 
 ### Update About.tsx
 
 Find (around line 60-61):
+
 ```tsx
 <div className="bg-sage-light h-80 rounded-lg"></div>
 <div className="bg-sage h-80 rounded-lg"></div>
 ```
 
 Replace with:
+
 ```tsx
-<Image 
-  src="/assets/images/about-1.jpg" 
-  alt="Luxort interior" 
-  width={400} 
+<Image
+  src="/assets/images/about-1.jpg"
+  alt="Luxort interior"
+  width={400}
   height={500}
   className="h-80 rounded-lg object-cover"
 />
-<Image 
-  src="/assets/images/about-2.jpg" 
-  alt="Luxort amenities" 
-  width={400} 
+<Image
+  src="/assets/images/about-2.jpg"
+  alt="Luxort amenities"
+  width={400}
   height={500}
   className="h-80 rounded-lg object-cover"
 />
@@ -114,16 +126,18 @@ Replace with:
 ### Update HotelHighlights.tsx
 
 Find (around line 48):
+
 ```tsx
 <div className="bg-sage h-96 rounded-lg"></div>
 ```
 
 Replace with:
+
 ```tsx
-<Image 
-  src="/assets/images/highlight-pool.jpg" 
-  alt="Swimming pool" 
-  width={800} 
+<Image
+  src="/assets/images/highlight-pool.jpg"
+  alt="Swimming pool"
+  width={800}
   height={600}
   className="h-96 rounded-lg object-cover w-full"
 />
@@ -132,14 +146,22 @@ Replace with:
 ### Update Events.tsx
 
 Find (around line 42):
+
 ```tsx
 <div className="bg-sage h-64 rounded-lg mb-4 group-hover:bg-sage-dark transition-colors"></div>
 ```
 
 Replace with:
+
 ```tsx
-<Image 
-  src={`/assets/images/event-${event.id === '01' ? 'wedding' : event.id === '02' ? 'corporate' : 'celebration'}.jpg`}
+<Image
+  src={`/assets/images/event-${
+    event.id === "01"
+      ? "wedding"
+      : event.id === "02"
+      ? "corporate"
+      : "celebration"
+  }.jpg`}
   alt={event.title}
   width={400}
   height={300}
@@ -150,13 +172,15 @@ Replace with:
 ### Update Testimonials.tsx
 
 Find (around line 67):
+
 ```tsx
 <div className="w-12 h-12 rounded-full bg-sage-light"></div>
 ```
 
 Replace with:
+
 ```tsx
-<Image 
+<Image
   src={`/assets/images/avatar-${index + 1}.jpg`}
   alt={testimonial.name}
   width={48}
@@ -170,12 +194,14 @@ Replace with:
 ## Step 4: Optimize Images (Optional but Recommended)
 
 ### Use WebP format for better performance:
+
 ```bash
 # Install sharp for image optimization
 npm install sharp
 ```
 
 ### Or use online tools:
+
 - https://squoosh.app/ (free, no signup)
 - https://tinypng.com/ (compress JPG/PNG)
 - https://cloudconvert.com/jpg-to-webp (convert to WebP)
@@ -187,9 +213,10 @@ npm install sharp
 If you don't have images yet, use these free sources:
 
 ### Unsplash (High-quality free photos)
+
 ```tsx
-<Image 
-  src="https://images.unsplash.com/photo-1566073771259-6a8506099945" 
+<Image
+  src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
   alt="Luxury hotel"
   width={800}
   height={600}
@@ -198,8 +225,9 @@ If you don't have images yet, use these free sources:
 ```
 
 ### UI Avatars (Generated avatars)
+
 ```tsx
-<Image 
+<Image
   src={`https://ui-avatars.com/api/?name=${testimonial.name}&size=128&background=8B9A92&color=fff`}
   alt={testimonial.name}
   width={48}
@@ -222,6 +250,7 @@ If you don't have images yet, use these free sources:
 ## 🚨 Troubleshooting
 
 ### Images not showing?
+
 ```bash
 # 1. Check file names are correct (case-sensitive!)
 # 2. Make sure images are in /public/assets/images/
@@ -231,11 +260,13 @@ npm run dev
 ```
 
 ### Images too large/slow?
+
 - Resize images to max 2000px width
 - Compress using TinyPNG or Squoosh
 - Convert to WebP format
 
 ### Images look stretched?
+
 - Add `object-cover` class
 - Set proper `width` and `height` props
 - Use `className` to control size
@@ -245,16 +276,16 @@ npm run dev
 ## 📝 Quick Reference - Image Component
 
 ```tsx
-import Image from 'next/image';
+import Image from "next/image";
 
-<Image 
-  src="/assets/images/your-image.jpg"  // Path from /public
-  alt="Description for SEO"             // Always include!
-  width={800}                           // Original width
-  height={600}                          // Original height
-  className="rounded-lg object-cover"   // Tailwind classes
-  priority                              // Optional: load first
-/>
+<Image
+  src="/assets/images/your-image.jpg" // Path from /public
+  alt="Description for SEO" // Always include!
+  width={800} // Original width
+  height={600} // Original height
+  className="rounded-lg object-cover" // Tailwind classes
+  priority // Optional: load first
+/>;
 ```
 
 ---
@@ -262,6 +293,7 @@ import Image from 'next/image';
 ## ✅ Checklist
 
 After adding images:
+
 - [ ] All hero images display correctly
 - [ ] About section has 2 images
 - [ ] Hotel highlights show main image

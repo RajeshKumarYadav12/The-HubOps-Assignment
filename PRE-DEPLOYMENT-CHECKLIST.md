@@ -1,6 +1,7 @@
 # Pre-Deployment Checklist for Luxort Hotel Website
 
 ## ✅ Code Quality
+
 - [x] All components created and functional
 - [x] No console errors in development
 - [x] Tailwind CSS configured properly
@@ -8,6 +9,7 @@
 - [x] Logo images in place
 
 ## ✅ Components Status
+
 - [x] Header - Navbar with logo, navigation, promotional banner
 - [x] Hero - 60-40 split, carousel with NEXT button
 - [x] About - 40-60 split, quote box, carousel
@@ -19,6 +21,7 @@
 - [x] Footer - Logo and links
 
 ## ✅ Interactive Features
+
 - [x] Hero carousel scrolling
 - [x] About carousel scrolling
 - [x] Events carousel scrolling
@@ -28,6 +31,7 @@
 ## 📝 Before Pushing to GitHub
 
 ### 1. Create .gitignore
+
 ```
 node_modules/
 .next/
@@ -39,13 +43,16 @@ out/
 ```
 
 ### 2. Test Build Locally
+
 ```powershell
 npm run build
 npm start
 ```
+
 Visit http://localhost:3000 and test all features
 
 ### 3. Git Commands
+
 ```powershell
 git init
 git add .
@@ -55,6 +62,7 @@ git commit -m "Initial commit - Luxort Hotel Website"
 ## 🚀 Deployment Steps (Quick Reference)
 
 ### Step 1: GitHub
+
 1. Create repo: https://github.com/new
 2. Name: `luxort-hotel-website`
 3. Push code:
@@ -65,6 +73,7 @@ git commit -m "Initial commit - Luxort Hotel Website"
    ```
 
 ### Step 2: Netlify
+
 1. Go to: https://app.netlify.com/
 2. Click: "Add new site" → "Import an existing project"
 3. Choose: "Deploy with GitHub"
@@ -75,6 +84,7 @@ git commit -m "Initial commit - Luxort Hotel Website"
 6. Click: "Deploy site"
 
 ### Step 3: Wait & Verify
+
 - Wait 2-5 minutes for build
 - Get live URL: `https://[site-name].netlify.app`
 - Test all sections
@@ -85,6 +95,7 @@ git commit -m "Initial commit - Luxort Hotel Website"
 **Subject:** Front-End Assessment Submission - Luxort Hotel Website
 
 **Body:**
+
 ```
 Dear Hiring Team,
 
@@ -114,6 +125,7 @@ Best regards,
 ## 🎯 Final Testing Checklist
 
 After deployment, test:
+
 - [ ] Homepage loads correctly
 - [ ] All images visible (navbar logo, sections)
 - [ ] Hero carousel works (NEXT button scrolls cards)
@@ -129,16 +141,19 @@ After deployment, test:
 ## 🛠️ Troubleshooting
 
 ### Build Fails
+
 - Check Netlify build logs
 - Verify all dependencies in package.json
 - Ensure Node version 18+
 
 ### Images Not Loading
+
 - Check file paths: `/assets/images/Logo.png`
 - Verify files exist in `/public/assets/images/`
 - File names are case-sensitive
 
 ### Site is Blank
+
 - Open browser console (F12)
 - Check for JavaScript errors
 - Verify Tailwind CSS is loading

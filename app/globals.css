@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 * {
@@ -15,13 +15,20 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: #FAF9F6;
+  background-color: #faf9f6;
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.2;
@@ -30,11 +37,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -42,12 +51,20 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8B9A92;
+  background: #8b9a92;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6B7A72;
+  background: #6b7a72;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
 }
 
 /* Marquee animation for promotional banner */
@@ -72,4 +89,13 @@ html {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Line clamp utility */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
