@@ -1,0 +1,26 @@
+# Quick Deployment Commands
+
+# Step 1: Initialize Git and commit your code
+git init
+git add .
+git commit -m "Initial commit - Luxort Hotel Website"
+
+# Step 2: Create repository on GitHub
+# Go to: https://github.com/new
+# Create a new repository named: luxort-hotel-website
+
+# Step 3: Push to GitHub (replace YOUR_USERNAME with your GitHub username)
+git remote add origin https://github.com/YOUR_USERNAME/luxort-hotel-website.git
+git branch -M main
+git push -u origin main
+
+# Step 4: Deploy on Netlify
+# Go to: https://app.netlify.com/
+# Click: "Add new site" → "Import an existing project" → "Deploy with GitHub"
+# Select your repository
+# Build settings:
+#   - Build command: npm run build
+#   - Publish directory: .next
+# Click "Deploy site"
+
+# Your site will be live at: https://random-name.netlify.app
